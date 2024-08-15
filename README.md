@@ -63,3 +63,12 @@ def example_solid(x):
 
 volume_irregular = volume_irregular_solid(example_solid, 0, math.pi)
 print("Volumen estimado del sólido irregular:", volume_irregular)
+
+## Contribuciones
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor realiza un fork del repositorio, realiza tus cambios y envía un pull request.
+
+## Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
+
+## Contacto
+Para preguntas o comentarios, por favor contacta a
