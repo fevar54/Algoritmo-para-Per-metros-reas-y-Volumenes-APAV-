@@ -25,7 +25,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por fa
 Este proyecto está licenciado bajo la Licencia MIT.
 
 ## Contacto
-Para preguntas o comentarios, por favor contacta a alertasyseguridad.net 
+Para preguntas o comentarios, por favor contacta a https://www.alertasyseguridad.net 
 
 ## Instalación
 
