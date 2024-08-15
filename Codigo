@@ -1,1 +1,99 @@
+import math
+import numpy as np
+
+# Funciones para figuras planas
+
+def perimeter_square(side):
+    return 4 * side
+
+def area_square(side):
+    return side ** 2
+
+def perimeter_circle(radius):
+    return 2 * math.pi * radius
+
+def area_circle(radius):
+    return math.pi * radius ** 2
+
+def perimeter_rectangle(length, width):
+    return 2 * (length + width)
+
+def area_rectangle(length, width):
+    return length * width
+
+def perimeter_triangle(a, b, c):
+    return a + b + c
+
+def area_triangle(base, height):
+    return 0.5 * base * height
+
+# Funciones para sólidos regulares
+
+def volume_cube(side):
+    return side ** 3
+
+def area_cube(side):
+    return 6 * (side ** 2)
+
+def volume_sphere(radius):
+    return (4/3) * math.pi * (radius ** 3)
+
+def area_sphere(radius):
+    return 4 * math.pi * (radius ** 2)
+
+def volume_cylinder(radius, height):
+    return math.pi * (radius ** 2) * height
+
+def area_cylinder(radius, height):
+    return 2 * math.pi * radius * (radius + height)
+
+# Propuesta alternativa para sólidos irregulares
+# Ejemplo usando el método de integración numérica para estimar el volumen de un sólido irregular.
+
+def volume_irregular_solid(func, a, b, n=1000):
+    """
+    Calcula el volumen de un sólido irregular usando integración numérica.
+    
+    :param func: Función que describe el contorno del sólido.
+    :param a: Límite inferior de integración.
+    :param b: Límite superior de integración.
+    :param n: Número de subintervalos para la integración.
+    :return: Volumen estimado del sólido.
+    """
+    x = np.linspace(a, b, n)
+    y = func(x)
+    volume = np.trapz(y, x)  # Regla del trapecio para integración numérica
+    return volume
+
+# Ejemplo de uso
+def example_solid(x):
+    # Esta función describe el contorno del sólido
+    return np.sin(x) + 2
+
+# Cálculo de volumen para un sólido definido entre x=0 y x=pi
+volume_irregular = volume_irregular_solid(example_solid, 0, math.pi)
+
+# Pruebas de las funciones implementadas
+print("Perímetro del cuadrado:", perimeter_square(5))
+print("Área del cuadrado:", area_square(5))
+
+print("Perímetro del círculo:", perimeter_circle(3))
+print("Área del círculo:", area_circle(3))
+
+print("Perímetro del rectángulo:", perimeter_rectangle(4, 6))
+print("Área del rectángulo:", area_rectangle(4, 6))
+
+print("Perímetro del triángulo:", perimeter_triangle(3, 4, 5))
+print("Área del triángulo:", area_triangle(3, 4))
+
+print("Volumen del cubo:", volume_cube(3))
+print("Área del cubo:", area_cube(3))
+
+print("Volumen de la esfera:", volume_sphere(4))
+print("Área de la esfera:", area_sphere(4))
+
+print("Volumen del cilindro:", volume_cylinder(3, 7))
+print("Área del cilindro:", area_cylinder(3, 7))
+
+print("Volumen estimado del sólido irregular:", volume_irregular)
 
